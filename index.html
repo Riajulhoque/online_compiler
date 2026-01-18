@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online C/C++ Compiler with Input Support</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Online C/C++ Compiler</h1>
+            <p>Supports scanf, cin, and user input</p>
+        </div>
+        
+        <div class="compiler-box">
+            <div class="controls">
+                <div class="language-selector">
+                    <label for="language">Language:</label>
+                    <select id="language">
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                    </select>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="clear-input-btn" onclick="clearInput()">
+                        Clear Input
+                    </button>
+                    <button class="reset-btn" onclick="resetAll()">
+                        Reset All
+                    </button>
+                    <button class="run-btn" onclick="compileAndRun()">
+                        ▶ Compile & Run
+                    </button>
+                </div>
+            </div>
+            
+            <div class="main-content">
+                <div class="left-panel">
+                    <div class="editor-container">
+                        <div class="panel-header">
+                            <span>Source Code Editor</span>
+                            <span class="char-count" id="charCount">0 chars</span>
+                        </div>
+                        <textarea id="editor" placeholder="Enter your C/C++ code here..." 
+                                  oninput="updateCharCount()"></textarea>
+                    </div>
+                    
+                    <div class="input-container">
+                        <div class="panel-header input-header">
+                            <span>Program Input</span>
+                            <span class="char-count" id="inputCount">0 chars</span>
+                        </div>
+                        <textarea id="userInput" placeholder="Enter input for your program here (one value per line)..."
+                                 oninput="updateInputCount()"></textarea>
+                    </div>
+                </div>
+                
+                <div class="right-panel">
+                    <div class="output-container">
+                        <div class="panel-header output-header">
+                            <span>Output Console</span>
+                            <span class="char-count" id="outputCount">0 chars</span>
+                        </div>
+                        <div id="output"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="examples">
+                <h3>Code Examples (with Input Support):</h3>
+                <div class="example-buttons">
+                    <button class="example-btn" onclick="loadExample('calculator')">Calculator</button>
+                    <button class="example-btn" onclick="loadExample('array_sum')">Array Sum</button>
+                    <button class="example-btn" onclick="loadExample('student_grade')">Student Grade</button>
+                    <button class="example-btn" onclick="loadExample('palindrome')">Palindrome Check</button>
+                    <button class="example-btn" onclick="loadExample('matrix_multiplication')">Matrix Multiplication</button>
+                </div>
+            </div> -->
+            
+            <div class="status-bar">
+                <div id="statusMessage">Ready to compile</div>
+                <div id="timer">Time: --</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

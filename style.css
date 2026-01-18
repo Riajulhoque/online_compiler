@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.compiler-box {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.controls {
+  padding: 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.language-selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+select,
+button,
+textarea {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid #667eea;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+select {
+  background: white;
+  cursor: pointer;
+}
+
+button {
+  background: #667eea;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.run-btn {
+  background: #48bb78;
+}
+
+.run-btn:hover {
+  background: #38a169;
+}
+
+.reset-btn {
+  background: #f56565;
+}
+
+.reset-btn:hover {
+  background: #e53e3e;
+}
+.action-buttons{
+  width: 35%;
+  display: flex;
+  
+}
+.clear-input-btn {
+  background: #ed8936;
+}
+
+.clear-input-btn:hover {
+  background: #dd6b20;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  min-height: 600px;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.left-panel,
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.editor-container,
+.input-container,
+.output-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.panel-header {
+  background: #4a5568;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-header {
+  background: #2d3748;
+}
+
+.output-header {
+  background: #2c5282;
+}
+
+#editor,
+#userInput,
+#output {
+  flex: 1;
+  padding: 15px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  border: none;
+  resize: none;
+  outline: none;
+}
+
+#editor {
+  background: #f7fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+#userInput {
+  background: #f0fff4;
+  border-top: 1px solid #c6f6d5;
+}
+
+#output {
+  background: #1a202c;
+  color: #cbd5e0;
+  border-top: 1px solid #2d3748;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+.output-line {
+  margin-bottom: 8px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.output-success {
+  color: #68d391;
+  background: rgba(104, 211, 145, 0.1);
+}
+
+.output-error {
+  color: #fc8181;
+  background: rgba(252, 129, 129, 0.1);
+}
+
+.output-input {
+  color: #63b3ed;
+  background: rgba(99, 179, 237, 0.1);
+}
+
+.status-bar {
+  padding: 12px 20px;
+  background: #2d3748;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border-top: 1px solid #4a5568;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.examples {
+  padding: 15px 20px;
+  background: #edf2f7;
+  border-top: 1px solid #e2e8f0;
+}
+
+.examples h3 {
+  margin-bottom: 10px;
+  color: #4a5568;
+}
+
+.example-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.example-btn {
+  background: #e2e8f0;
+  border: 1px solid #cbd5e0;
+  color: #4a5568;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.example-btn:hover {
+  background: #cbd5e0;
+}
+
+.char-count {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.tab {
+  padding: 8px 16px;
+  background: #2d3748;
+  border-radius: 5px;
+  color: #cbd5e0;
+  font-family: monospace;
+  margin-bottom: 5px;
+}
